@@ -696,3 +696,12 @@ Be especially careful with these frequently-changed areas:
 2. **Present recommendations to user**
 3. Wait for user to approve specific changes
 4. Implement only the changes the user explicitly approves
+
+### Memory Tracking System
+READ THIS AT THE START OF EVERY SESSION:
+Read `/homeassistant/memory.yaml` to load previous session memories
+The file contains a `memories` list with session summaries
+BEFORE SIGNING OFF EVERY SESSION:
+Append a summary of the current session to the `memories` list in `/homeassistant/memory.yaml`
+Include the local time according to Home Assistant, the date, key actions taken, decisions made, and any important context for future sessions
+Use the format: `session: "YYYY-MM-DD HH-MM - Brief description"` and `summary: "..."` (including actions taken, decisions made and any important context within the summary)
