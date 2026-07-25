@@ -704,4 +704,4 @@ Be especially careful with these frequently-changed areas:
 4. Append a summary of the current session to the `memories` list in `/homeassistant/memory.yaml`
  - Include the local time according to Home Assistant, the date, key actions taken, decisions made, and any important context for future sessions
  - Always use `homeassistant_render_template` with `{{ now() }}` to get the current local time before writing the session entry
- - Use the format: `session: "YYYY-MM-DD HH-MM - Brief description"` and `summary: "..."` (including actions taken, decisions made and any important context within the summary) Note: hyphens are used throughout the timestamp for consistency with the date format.
+ - Use the format: `session: "YYYY-MM-DD HH:MM - Brief description"` and `summary: "..."` (including actions taken, decisions made and any important context within the summary)
