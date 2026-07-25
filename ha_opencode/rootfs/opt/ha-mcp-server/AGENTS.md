@@ -700,8 +700,17 @@ Be especially careful with these frequently-changed areas:
 ### Memory Tracking System
 1. READ THIS AT THE START OF EVERY SESSION:
 2. Read `/homeassistant/memory.yaml` to load previous session memories. The file contains a `memories` list with session summaries
-3. BEFORE SIGNING OFF EVERY SESSION:
-4. Append a summary of the current session to the `memories` list in `/homeassistant/memory.yaml`
- - Include the local time according to Home Assistant, the date, key actions taken, decisions made, and any important context for future sessions
- - Always use `homeassistant_render_template` with `{{ now() }}` to get the current local time before writing the session entry
+3. WRITING TO MEMORY:
+ - Always ask the user "Would you like to save this to memory? (y/n)" before writing to memory.yaml. Write only on confirmation.
+ - If the user declines, do not write and do not ask again for the same task within the current session
+ - If the user explicitly requests a write, skip the confirmation prompt and write immediately
+ - A user confirmed write always overrides the 1 hour deduplication window
+4. Ask to write when any of the following occur:
+ - The user explicitly requests it
+ - The user exits a session using a prompt — treat this as an explicit write request
+ - A discrete task or problem has been fully resolved
+ - A significant decision has been made
+5. Append a summary of the current session to the `memories` list in `/homeassistant/memory.yaml`
+ - Always use homeassistant_render_template with {{ now() }} to get the current local time before writing
+ - Include: key actions taken, decisions made, and any important context for future sessions
  - Use the format: `session: "YYYY-MM-DD HH:MM - Brief description"` and `summary: "..."` (including actions taken, decisions made and any important context within the summary)
