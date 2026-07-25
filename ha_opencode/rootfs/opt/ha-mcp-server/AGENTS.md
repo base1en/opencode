@@ -696,3 +696,6 @@ Be especially careful with these frequently-changed areas:
 2. **Present recommendations to user**
 3. Wait for user to approve specific changes
 4. Implement only the changes the user explicitly approves
+
+### User Customisation and Local Instructions
+If `/homeassistant/AGENTS.local.md` exists, read it and apply its instructions after reading this file. AGENTS.md takes precedence if instructions conflict.
