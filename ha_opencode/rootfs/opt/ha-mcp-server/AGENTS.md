@@ -698,4 +698,8 @@ Be especially careful with these frequently-changed areas:
 4. Implement only the changes the user explicitly approves
 
 ### User Customisation and Local Instructions
-If `/homeassistant/AGENTS.local.md` exists, read it and apply its instructions after reading this file. AGENTS.md takes precedence if instructions conflict.
+> Allows users to add their own local instructions for things like verbose logging, supplementary agents, custom workflows, or persistent context without modifying files managed by the repository.
+
+If `/homeassistant/AGENTS.local.md` exists, read and apply its instructions after processing `AGENTS.md`.
+
+> **IMPORTANT:** `AGENTS.md` takes precedence if instructions conflict. `AGENTS.local.md` is intended for user customisation only and should not override core integration behaviour.
