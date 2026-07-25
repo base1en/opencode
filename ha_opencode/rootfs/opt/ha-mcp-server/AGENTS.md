@@ -704,6 +704,7 @@ Be especially careful with these frequently-changed areas:
  - Always ask the user "Would you like to save this to memory? (y/n)" before writing to memory.yaml. Write only on confirmation.
  - If the user declines, do not write and do not ask again for the same task within the current session
  - If the user explicitly requests a write, skip the confirmation prompt and write immediately
+ - Do not duplicate entries from previous writes within a 1 hour window unless something significant has changed.
  - A user confirmed write always overrides the 1 hour deduplication window
 4. Ask to write when any of the following occur:
  - The user explicitly requests it
